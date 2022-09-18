@@ -28,7 +28,7 @@ class MRFAB(nn.Module):
             out = out.permute(0,3, 1, 2)
             out = F.gelu(self.conv2(out))
             out = self.conv3(out)
-            out = out
+            out = out+x
             return out
 
 class Det_Reg(nn.Module):
